@@ -3,11 +3,13 @@
 $url = 'https://colorlib.com/';
 $copyText = sprintf( __( 'Theme by %s colorlib %s Copyright &copy; %s  |  All rights reserved.', 'dentist' ), '<a target="_blank" href="' . esc_url( $url ) . '">', '</a>', date( 'Y' ) );
 
+$footerWidget = dentist_opt( 'dentist-widget-toggle-settings', false );
+$footer_bottom = ! empty( $footerWidget ) ? 'footer-bottom' : '';
 ?>
 
 <div class="copyright-text">
     <div class="container">
-        <div class="row footer-bottom d-flex justify-content-between">
+        <div class="row d-flex justify-content-between <?php echo esc_attr( $footer_bottom ) ?>">
             <p class="col-lg-8 col-sm-6 footer-text m-0"><?php echo wp_kses_post( dentist_opt( 'dentist-copyright-text-settings', $copyText ) ); ?></p>
             <?php
             if( has_nav_menu( 'social-menu' ) ) {

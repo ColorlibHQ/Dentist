@@ -22,14 +22,15 @@
             </div>
         </div>
     </div>
-
-
-    <div class="container main-menu">
+    <?php
+    $menu_container =  has_nav_menu( 'primary-menu' ) || has_nav_menu( 'social-menu' ) ? 'main-menu' : 'no-menu-active';
+    ?>
+    <div class="container <?php echo esc_attr( $menu_container ) ?>">
         <div class="row align-items-center justify-content-between d-flex">
-            <nav id="nav-menu-container">
+            
                 <?php
-                //
                 if( has_nav_menu( 'primary-menu' ) ) {
+                    echo '<nav id="nav-menu-container">';
                     $args = array(
                         'theme_location' => 'primary-menu',
                         'container'      => '',
@@ -39,22 +40,24 @@
                         'walker'         => new dentist_bootstrap_navwalker(),
                     );  
                     wp_nav_menu( $args );
+                    echo '</nav>';
                 }
-                ?>
-            </nav><!-- #nav-menu-container -->
-            <div class="menu-social-icons">
-	            <?php
-	            $args = array(
-		            'theme_location' => 'social-menu',
-		            'container'      => '',
-		            'depth'          => 1,
-		            'menu_class'     => 'nav-social',
-		            'fallback_cb'    => 'dentist_social_navwalker::fallback',
-		            'walker'         => new dentist_social_navwalker(),
-	            );
-	            wp_nav_menu( $args );
-	            ?>
-            </div>
+
+                //Social Menu
+                if( has_nav_menu( 'social-menu' ) ){
+                    echo '<div class="menu-social-icons">';
+                    $args = array(
+                        'theme_location' => 'social-menu',
+                        'container'      => '',
+                        'depth'          => 1,
+                        'menu_class'     => 'nav-social',
+                        'fallback_cb'    => 'dentist_social_navwalker::fallback',
+                        'walker'         => new dentist_social_navwalker(),
+                    );
+                    wp_nav_menu( $args );
+                    echo ' </div>';
+                }
+                ?>           
         </div>
     </div>
 </header><!-- #header -->

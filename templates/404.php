@@ -20,7 +20,7 @@ if( ! defined( 'ABSPATH' ) ) {
 				<div class="inner-fof">
 					<div class="inner-child-fof">
 						<?php 
-						$errorText = esc_html__( 'Ooops 404 Error !', 'dentist' );
+						$errorText = esc_html__( 'Oops 404 Error!', 'dentist' );
 						// Error text
 						echo '<h1 class="h1 mb-15">'.esc_html( dentist_opt( 'dentist_fof_text_one', $errorText ) ).'</h1>';
 
@@ -28,17 +28,10 @@ if( ! defined( 'ABSPATH' ) ) {
 						$wrongText = esc_html__( 'Either something went wrong or the page dosen\'t exist anymore.', 'dentist'  );
 
 						$wrongText = dentist_opt( 'dentist_fof_text_two', $wrongText );
-					
-						$anchor = dentist_anchor_tag(
-							array(
-								'url' 	 => esc_url( site_url( '/' ) ),
-								'text' 	 => esc_html__( 'Back To Home page', 'dentist' ),
-							)
-						);
-
+				
 						echo dentist_paragraph_tag(
 							array(
-								'text' 	 => sprintf( '%s %s', esc_html( $wrongText ), wp_kses_post( $anchor )  ),
+								'text' 	 => sprintf( '%s', esc_html( $wrongText ) ),
 							)
 						);
 
@@ -51,6 +44,15 @@ if( ! defined( 'ABSPATH' ) ) {
 								?>
 							</div>
 						</div>
+						<?php 
+							echo dentist_anchor_tag(
+							array(
+								'url' 	 => esc_url( site_url( '/' ) ),
+								'text' 	 => esc_html__( 'Back To Home page', 'dentist' ),
+								'class'	 => 'primary-btn mt-20'
+							)
+						);
+						?>
 					</div>
 				</div>
 			</div>
