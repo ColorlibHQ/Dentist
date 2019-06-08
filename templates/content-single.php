@@ -25,7 +25,6 @@ if( ! defined( 'ABSPATH' ) ) {
 		         *
 		         * @Hooked dentist_blog_posts_thumb_cb
 		         *
-		         *
 		         */
 		        do_action( 'dentist_blog_posts_thumb' );
 		        ?>

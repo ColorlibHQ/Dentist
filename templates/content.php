@@ -23,23 +23,13 @@ if( ! defined( 'ABSPATH' ) ) {
 
 		/**
 		 * Blog Post Meta
-		 * @Hook  dentist_blog_posts_meta
+		 * @Hook  dentist_blog_single_meta
 		 *
-		 * @Hooked dentist_blog_posts_meta_cb
-		 *
+		 * @Hooked dentist_blog_single_meta_cb
 		 *
 		 */
-		do_action( 'dentist_blog_posts_meta' );
+		do_action( 'dentist_blog_single_meta' );
 
-		/**
-		 * Blog Excerpt With read more button
-		 * @Hook  dentist_blog_posts_bottom_meta
-		 *
-		 * @Hooked dentist_blog_posts_bottom_meta_cb
-		 *
-		 *
-		 */
-		do_action( 'dentist_blog_posts_bottom_meta' );
 		?>
     </div>
     <div class="col-lg-9 col-md-9 blog-content">

@@ -1,5 +1,7 @@
-
-<header id="header">
+<?php
+    $header_menu_p = has_nav_menu( 'primary-menu' ) ? 'header-menu' : 'no-header-menu';
+?>
+<header id="header" class="<?php echo esc_attr( $header_menu_p ) ?> ">
     <div class="header-top">
         <div class="container">
             <div class="row">
