@@ -70,6 +70,12 @@ if( ! defined( 'DENTIST_DIR_PATH_WIDGET' ) ) {
 }
 
 
+// Admin Enqueue script
+function dentist_admin_script(){
+    wp_enqueue_style( 'dentist-admin', get_template_directory_uri().'/assets/css/dentist_admin.css', false, '1.0.0' );
+    wp_enqueue_script( 'dentist_admin', get_template_directory_uri().'/assets/js/dentist_admin.js', false, '1.0.0' );
+}
+add_action( 'admin_enqueue_scripts', 'dentist_admin_script' );
 
 
 /**

@@ -14,8 +14,8 @@ if( !defined( 'WPINC' ) ){
     // Dentist meta scripts enqueue
     add_action( 'admin_enqueue_scripts', 'dentist_meta_scripts' );
     function dentist_meta_scripts() {
-        wp_enqueue_style( 'dentist-meta-style', plugins_url( 'assets/css/dentist-meta.css', __FILE__ ) );
-        wp_enqueue_script( 'dentist-meta-script', plugins_url( 'assets/js/dentist-meta.js', __FILE__ ), array('jquery'), '1.0', true );
+        wp_enqueue_style( 'dentist-meta-style', DENTIST_COMPANION_META_DIR_URL. 'assets/css/dentist-meta.css' );
+        wp_enqueue_script( 'dentist-meta-script', DENTIST_COMPANION_META_DIR_URL. 'assets/js/dentist-meta.js', array('jquery'), '1.0', true );
     }
 
     // Page Header select option meta

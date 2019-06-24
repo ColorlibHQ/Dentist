@@ -70,6 +70,11 @@ if( ! defined( 'DENTIST_COMPANION_DD_DIR_URL' ) ) {
     define( 'DENTIST_COMPANION_DD_DIR_URL', DENTIST_COMPANION_INC_DIR_URL . 'demo-data/' );
 }
 
+// Define demo data dir url constant
+if( ! defined( 'DENTIST_COMPANION_META_DIR_URL' ) ) {
+    define( 'DENTIST_COMPANION_META_DIR_URL', DENTIST_COMPANION_INC_DIR_URL . 'dentist-meta/' );
+}
+
 
 $current_theme = wp_get_theme();
 
